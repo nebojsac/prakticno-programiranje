@@ -1,6 +1,38 @@
 # Praktično programiranje
 Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
 
+# Kratak Sadržaj
+
+1. [Uvod](#uvod)
+ * [Imajte na umu](#imajte-na-umu)
+ * [Zašto PHP?](#Zašto-php)
+ * [Šta će vam ovaj tekst pokazati](Šta-će-vam-ovaj-tekst-pokazati)
+ * [Potrebno predznanje(ukratko: skoro pa ništa)](#potrebno-predznanjeukratko-skoro-pa-ništa)
+ * [Potrebni programi](#potrebni-programi)
+ * [Saveti za savladavanje materije](#saveti-za-savladavanje-materije)
+2. [Podešavanje radnog okruženja](#podešavanje-radnog-okruženja)
+ * [Program za rad](#program-za-rad)
+ * [Folder za rad](#folder-za-rad)
+ * [Tipični problemi (TODO)](#tipični-problemi-todo)
+* [Počnimo sa kodom!](#počnimo-sa-kodom)
+ * [Echo](#echo)
+ * [Uslovi (IF/ELSE)](#uslovi-ifelse)
+ * [Napredniji Uslovi](#napredniji-uslovi)
+  * [Ukratko o boolean vrednostima](#ukratko-o-boolean-vrednostima)
+ * [Logičke operacije](#logičke-operacije)
+ * [Kratak pregled tipova podataka/promenljivih](#kratak-pregled-tipova-podatakapromenljivih)
+  * [Više o Boolean(istinitost)](#vise-o-booleanistinitost)
+  * [Malo o strogoj jednakosti](#malo-o-strogoj-jednakosti)
+* [Slanje podataka sa jedne stranice na drugu](#slanje-podataka-sa-jedne-stranice-na-drugu)
+* [Osnove nizova](#osnove-nizova)
+* [Pravimo digitron sa ovim što znamo](#pravimo-digitron-sa-ovim-sto-znamo)
+ * [Jednostavna HTML forma](#jednostavna-html-forma)
+* [Petlje](#petlje)
+ * [Matematika u petljama](#matematika-u-petljama)
+ * [While petlja](#while-petlja)
+* [Datum i vreme uz date() funkciju](#datum-i-vreme-uz-date-funkciju)
+
+
 ## Uvod
 Svrha ovog teksta je da se programiranje približi apsolutnim početnicima u cilju da razbije taj prvobitni strah od nepoznatog. Kad se pohvataju osnovni pojmovi poput promenljivih, uslova, logičkih operacija, petlji, funkcija i klasa, lakše je i preći na bilo koji drugi jezik po potrebi.
 
@@ -541,7 +573,7 @@ Poenta ovog pregleda je da su POST i GET promenljive nizovi, i sva pravila nizov
 
 ## Pravimo digitron sa ovim što znamo
 
-## Jednostavna HTML forma
+### Jednostavna HTML forma
 
 Ne želim puno da se zadržavam na HTML-u za sada, ali da bi prestali čačkati promenljive u codu(a ne želim da radimo u terminalu) trebamo koristi HTML forme. Prekopirajte sledeći k**o**d kod vas u index.php:
 ```php
