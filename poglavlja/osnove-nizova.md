@@ -52,3 +52,8 @@ echo $neparniBrojevi['tri']; // 3
 ?>
 ```
 Poenta ovog pregleda je da su POST i GET promenljive nizovi, i sva pravila nizova važe i za njih. To je sve što trebate znati vezano za nizove za sledeći zadatak, a kasnije ćemo se vratiti na rad sa nizovima.
+
+Zadaci: 
+* Napravi niz ```$daniNedelje``` da sadrži dane od Ponedeljka do Nedelje. 
+* Ispiši ceo niz sa ```print_r()```. A sad ispiši samo jedan elemenat, na primer "sredu", sa ```echo```.
+* Sad napravi niz indeksiran tekstom, za broj meseca(npr, ```'septembar'=>9```, za zimske mesece. Dakle ```$zimskiMeseci```. Posle toga ispiši sa ```echo``` samo vrednost indeksiranu tekstom ```'decembar'```
