@@ -73,4 +73,25 @@ Pozivanje funkcije se radi **bez** ```function```. Ali pošto definicija naše f
 
 U primeru se vidi da našoj funkciji možemo proslediti promenljivu ```$i``` na primer, a možemo i direktno neki tekst ubaciti, kao što radimo sa ```'KRAJ'```.
 
-Nastaviće se...
+
+Funkcija koju bih vam preporučio i za budući lakši rad je sledeća:
+```php
+<?php
+
+	pr('Početak programa');
+
+	for ($i = 0; $i <= 10; $i++) {
+		echo pr($i);
+	}
+
+	echo pr('KRAJ');
+
+	function pr($podaci) {
+		echo '<pre>';
+		print_r($podaci);
+		echo '</pre>';
+	}
+?>
+```
+* Ova funkcija služi za preglednije ispisivanje podataka na ekran. Naročito je korisna kad se koristi za ispis nizova.
+* Nazvali smo je kratko ```pr()``` jer ćemo je često koristiti. Inspirisana je istoimenom funkcijom iz CakePHP-a, i kasnije ćemo je proširiti dodatno.
