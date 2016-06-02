@@ -30,7 +30,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * [Matematika u petljama](poglavlja/petlje.md#matematika-u-petljama)
  * [While petlja](poglavlja/petlje.md#while-petlja)
 * [Datum i vreme uz date() funkciju](poglavlja/datum-i-vreme-uz-date-funkciju.md)
-
+ * [Rad sa predefinisanim vremenima i datumom](poglavlja/rad-sa-predefinisanim-vremenima-i-datumom.md)
 ## Teme u najavi
 * [Tipični problemi](#tipični-problemi-todo)
  * Ne znam pokrenuti XAMPP
