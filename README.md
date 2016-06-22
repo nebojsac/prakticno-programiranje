@@ -31,23 +31,28 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * [While petlja](poglavlja/petlje.md#while-petlja)
 * [Datum i vreme uz date() funkciju](poglavlja/datum-i-vreme-uz-date-funkciju.md)
  * [Rad sa predefinisanim vremenima i datumom](poglavlja/rad-sa-predefinisanim-vremenima-i-datumom.md)
+* [Napredniji rad sa nizovima](poglavlja/napredniji-rad-sa-nizovima.md)
+ * [Asocijativni nizovi](#asocijativni-nizovi)
+ * [Foreach petlja](#foreach-petlja)
+ * [Višedimenzionalni nizovi](#višedimenzionalni-nizovi)
+
 ## Teme u najavi
+
 * [Tipični problemi](#tipični-problemi-todo)
  * Ne znam pokrenuti XAMPP
  * XAMPP radi ali "Apache" pokazuje grešku sa PORTom
  * Ne znam pokrenuti primer u browseru
  * U browseru vidim isto što u editoru
-* [Napredniji rad sa nizovima](#napredniji-rad-sa-nizovima)
- * [Asocijativni nizovi](#asocijativni-nizovi)
- * [Foreach petlja](#foreach-petlja)
- * [Višedimenzionalni nizovi](#višedimenzionalni-nizovi)
 * [Funkcije](#funkcije)
  * [Naše funkcije](#naše-funkcije)
  * [Argumenti vs Parametri](#argumenti-vs-parametri)
  * [Povratne vrednosti](#povratne-vrednosti)
  * [Rekurzija (napredno)](#rekurzija-napredno)
+* [Klase](#klase)
+ * [Atributi, Metode, Vidljivost](#atributi-metode-vidljivost)
 
 ## Uvod
+
 Svrha ovog teksta je da se programiranje približi apsolutnim početnicima u cilju da razbije taj prvobitni strah od nepoznatog. Kad se pohvataju osnovni pojmovi poput promenljivih, uslova, logičkih operacija, petlji, funkcija i klasa, lakše je i preći na bilo koji drugi jezik po potrebi.
 
 ### Imajte na umu
