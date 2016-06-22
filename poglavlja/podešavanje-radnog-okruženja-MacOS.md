@@ -5,7 +5,7 @@ načina da se instalira web server na MacOS. Najjednostavniji način instalacije
 pomoću alata koji se zove Laravel Valet [https://laravel.com/docs/5.2/valet].
 
 
-Da bi to instalirali potrebni su nam neki dodatni alati o kojima cemo kasnije razgovarati:
+Da bi to instalirali potrebni su nam neki dodatni alati o kojima ćemo kasnije razgovarati:
 
 Otvorite Terminal koji se nalazi u: Appliations/Utilities/Terminal.app
 (Prečica: CMD + SPACE i ukucajte Terminal)
@@ -13,7 +13,7 @@ Otvorite Terminal koji se nalazi u: Appliations/Utilities/Terminal.app
 
 Prvo ćemo instalirati Package manager za MacOs zvani BREW (Menadžer paketa/programa)
 
-Prekopirajte sledeći text u vaš terminal i pritisnite enter (ukoliko zatraži vas password upišite ga)
+Prekopirajte sledeći text u vaš terminal i pritisnite enter (ukoliko zatraži vaš password upišite ga)
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -38,7 +38,7 @@ Prvo ćemo updejtovati BREW:
 brew update
 ```
 
-I onda instalirati najnoviji PHP
+I onda instalirati najnoviji PHP-a
 ```bash
 brew install homebrew/php/php70
 ```
@@ -53,9 +53,9 @@ export PATH=$PATH:~/.composer/vendor/bin
 ```
 
 
-Vecina developera drži sve svoje projekte na jednom mestu. Pa ćemo i mi isto uraditi. U vašem user direktorijumu, napravićemo folder Projects i onda ćemo sve buduće projekte koje radimo da čuvamo u taj folder. (Primer: Projects/lekcija_1/...)
+Vecina developera drži sve svoje projekte na jednom mestu, pa ćemo i mi isto uraditi. U vašem user direktorijumu, napravićemo folder ```Projects``` i onda ćemo sve buduće projekte koje radimo da čuvamo u taj folder. (Primer: Projects/lekcija_1/...)
 
-Sledeće komande pokrećite jednu po jednu liniju, te komande će ući u vas glavni direktorijum, kreirati direktorijum Projects i ući u njega.
+Sledeće komande pokrećite jednu po jednu liniju, te komande će ući u vas glavni direktorijum, kreirati direktorijum ```Projects``` i ući u njega.
 
 ```bash
 cd
@@ -69,14 +69,14 @@ Da bi mogli da pristupim ovim direktorijumima preko browser-a, instaliraćemo Va
 valet install
 ```
 
-Nakon uspešne instalacije, treba da damo Valet-u do znanja gde su nam projekti.
+Nakon uspešne instalacije, treba da damo Valet-u do znanja gde su nam projekti:
 
 ```bash
 valet park
 ```
 
 
-I instalacija je gotova. PHP je podešen i sad bi vam web server trebao raditi. Da bi testirali pokrenite slece komande:
+I instalacija je gotova, PHP je podešen i sad bi Vam web server trebao raditi. Da bi testirali pokrenite sledeće komande:
 
 ```bash
 mkdir proba
@@ -84,9 +84,9 @@ mkdir proba
 echo "<?php echo 'Yaay, ovo radi!'; ?>" > proba/index.php
 ```
 
-Nakon toga, otvorite vas browser i stranicu: http://proba.dev
+Nakon toga, otvorite vas browser i stranicu: [http://proba.dev](http://proba.dev)
 
-Trebalo bi da vidite samo text: Yaay, ovo radi!
+Trebalo bi da vidite samo text: ```Yaay, ovo radi!```
 
 
 ## Program za rad
