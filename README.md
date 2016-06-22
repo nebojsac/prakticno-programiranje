@@ -1,7 +1,9 @@
 # Praktično programiranje
 
-[![Join the chat at https://gitter.im/nebojsac/prakticno-programiranje](https://badges.gitter.im/nebojsac/prakticno-programiranje.svg)](https://gitter.im/nebojsac/prakticno-programiranje?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
+
+
+[![Pridružite se chat-u na https://gitter.im/nebojsac/prakticno-programiranje](https://badges.gitter.im/nebojsac/prakticno-programiranje.svg)](https://gitter.im/nebojsac/prakticno-programiranje?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Kratak Sadržaj
 
