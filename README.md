@@ -16,7 +16,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * [Saveti za savladavanje materije](#saveti-za-savladavanje-materije)
 2. Podešavanje radnog okruženja
  * [Windows](poglavlja/podešavanje-radnog-okruženja.md)
- * [MacOS](poglavlja/podešavanje-radnog-okruženja-MasOS.md)
+ * [MacOS](poglavlja/podešavanje-radnog-okruženja-MacOS.md)
  * [Program za rad](poglavlja/podešavanje-radnog-okruženja.md#program-za-rad)
  * [Folder za rad](poglavlja/podešavanje-radnog-okruženja.md#folder-za-rad)
 3. [Počnimo sa kodom!](poglavlja/pocnimo-sa-kodom.md)
