@@ -88,6 +88,7 @@ Vežbe radi, uradite sledeće:
 * Zamenite dva ispisana teksta u kodu, da prvi bude za **"odraslu osobu"**. Izmenite uslov da ispisuje tačnu rečenicu na osnovu broja godina.
 
 ## Napredniji Uslovi
+
 Tu može još dosta da se priča, ali za početak će biti dovoljno još par primera uslova.
 
 ```php
@@ -106,18 +107,18 @@ echo $razred . '. razred je ' . $skola . '.';
 ?>
 ```
 
-Novost ovaj put je **elseif** uslov. Logika ovde je takva da se prvo proveri uslov "manje ili jednako sa 8", pa ako taj uslov nije ispunjen, ide na sledeći, "manje ili jednako sa 12", i tek ako ni taj nije ispunjen, stiže na poslednji uslov "veće od 12". Ako ni poslednji uslov nije ispunjen, izlazimo iz ovog grananja, ništa od komandi unutar ovih uslova neće biti pokrenuto. Da smo stavili još na kraj običan **else** bez ikakvih dodatnih poređenje, onda bi komande unutar tog **else** bloka bile pokrenute samo ako ni jedan prethodni uslov nije ispunjen.
+Novost ovaj put je ```elseif``` uslov. Logika ovde je takva da se prvo proveri uslov "manje ili jednako sa 8", pa ako taj uslov nije ispunjen, ide na sledeći, "manje ili jednako sa 12", i tek ako ni taj nije ispunjen, stiže na poslednji uslov "veće od 12". Ako ni poslednji uslov nije ispunjen, izlazimo iz ovog grananja, ništa od komandi unutar ovih uslova neće biti pokrenuto. Da smo stavili još na kraj običan ```else``` bez ikakvih dodatnih poređenje, onda bi komande unutar tog ```else``` bloka bile pokrenute samo ako ni jedan prethodni uslov nije ispunjen.
 
 Vežbe vezane za ovo:
-* Menjajte promenljivu **$razred**, tako da vidite sve moguće rečenice.
-* Zašto smo morali koristiti "manje ili jednako" simbol <= umesto običnog "manje" simbola? 
-* Ako bismo promenili prvi i drugi uslov tako da koriste simbol za manje <, koje vrednosti bi mogli staviti u **$razred** da na kraju **$skola** ostane prazan string ''?
+* Menjajte promenljivu ```$razred```, tako da vidite sve moguće rečenice.
+* Zašto smo morali koristiti "manje ili jednako" simbol ```<=``` umesto običnog "manje" simbola? 
+* Ako bismo promenili prvi i drugi uslov tako da koriste simbol za manje ```<```, koje vrednosti bi mogli staviti u ```$razred``` da na kraju ```$skola``` ostane prazan string ```''```? Pomoć: dakle, ako su uslovi ```($razred < 8)```, ```($razred < 12)``` i ```($razred > 12)```, koja vrednost za ```$razred``` nije pokrivena?
 
 ### Ukratko o boolean vrednostima
 
 Boolean je binarni tip promenljive, što znači da obuhvata samo dve moguće vrednosti. Najtačnije je predstaviti ih sa ```true``` i ```false```, ali ekvivalenti su i ```1``` i ```0```. Možete o njima misliti kao o tačnosti, "istinito" i "neistinito", "tačno" i "netačno", "da" i "ne". 
 
-Iako trenutno ne znate šta su boolean vrednosti, vi ste već baratali sa njima. Kao što matematičke operacije daju određene brojčane vrednosti, tako operacije poređenja ```<,>,==,<=,>=,!=``` daju boolean vrednosti. 
+Iako možda trenutno ne znate šta su boolean vrednosti, vi ste već baratali sa njima. Kao što matematičke operacije daju određene brojčane vrednosti, tako operacije poređenja ```<,>,==,<=,>=,!=``` daju boolean vrednosti. 
 
 ```php 
 <?php
@@ -211,7 +212,7 @@ if ((true AND true) AND true AND (false OR true)) {
 }
 
 // treći:
-if (false OR (true AND false))) {
+if (false OR (true AND false)) {
 	echo 'true';
 } else {
 	echo 'false';
