@@ -38,9 +38,9 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
 * [Datum i vreme uz date() funkciju](poglavlja/datum-i-vreme-uz-date-funkciju.md)
  * [Rad sa predefinisanim vremenima i datumom](poglavlja/rad-sa-predefinisanim-vremenima-i-datumom.md)
 * [Napredniji rad sa nizovima](poglavlja/napredniji-rad-sa-nizovima.md)
- * [Asocijativni nizovi](#asocijativni-nizovi)
- * [Foreach petlja](#foreach-petlja)
- * [Višedimenzionalni nizovi](#višedimenzionalni-nizovi)
+ * [Nizovi i For petlja](poglavlja/napredniji-rad-sa-nizovima.md#nizovi-i-for-petlja)
+ * [Nizovi i Foreach petlja](poglavlja/napredniji-rad-sa-nizovima.md#nizovi-i-foreach-petlja)
+ * [Višedimenzionalni nizovi](poglavlja/napredniji-rad-sa-nizovima.md#visedimenzionalni-nizovi)
 
 ## Teme u najavi
 

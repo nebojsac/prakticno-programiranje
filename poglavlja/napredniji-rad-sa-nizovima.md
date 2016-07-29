@@ -343,3 +343,103 @@ Subota: shopping.
 Nedelja: slobodan dan.
 ```
 Savet: Petlja može da se koristi unutar druge petlje.
+
+## Višedimenzionalni nizovi
+
+Do sad smo videli nizove koji sadrže brojeve i tekstove. Nizovi mogu sadržati bilo koji standardni tip vrednosti, pa
+tako i druge nizove. Pogledajmo sledeći primer:
+
+```php
+<?php
+$basketballTeams = [
+	'Lakers' => [
+		'players' => 10,
+		'city' => 'LA'
+	],
+	'Bulls' => [
+		'players' => 12,
+		'city' => 'Chicago'
+	]
+];
+
+
+// Ispisemo ceo niz da vidimo sta se desava.
+var_dump($basketballTeams);
+
+```
+
+Da bi pristupili elementima dublje u nizu koristimo dodatne uglaste zagrade ```[]```.
+U ovom slučaju, ulazimo u podniz sa indeksom ```'Bulls'```, i onda pristupamo indeksu ```'city'``` unutar njega.
+
+```
+<?php
+
+$basketballTeams = [
+	'Lakers' => [
+		'players' => 10,
+		'city' => 'LA'
+	],
+	'Bulls' => [
+		'players' => 12,
+		'city' => 'Chicago'
+	]
+];
+
+// Konkretno, u ovom slucaju ga brisemo.
+unset($basketballTeams['Bulls']['city']);
+
+var_dump($basketballTeams);
+```
+
+Sem brisanja, možemo i menjati sadržaj niza. Napišemo ime niza, i onda željene indekse na kojima želimo
+menjati vrednost. U ovom slučaju, ostavljamo da indeks ```['Bulls']['city']``` postoji, ali ga ostavljamo praznim.
+
+```
+<?php
+
+$basketballTeams = [
+	'Lakers' => [
+		'players' => 10,
+		'city' => 'LA'
+	],
+	'Bulls' => [
+		'players' => 12,
+		'city' => 'Chicago'
+	]
+];
+
+$basketballTeams['Bulls']['city'] = '';
+
+var_dump($basketballTeams);
+```
+
+Kao i sa dosadašnjim nizovima, možemo dodati nove elemente. Sem toga, ti novi elementi mogu biti nizovi.
+
+```
+<?php
+
+$basketballTeams = [
+	'Lakers' => [
+		'players' => 10,
+		'city' => 'LA'
+	],
+	'Bulls' => [
+		'players' => 12,
+		'city' => 'Chicago'
+	]
+];
+
+// Mozemo dodati i jos jedan indeks, sa novim nizom
+$basketballTeams['Magic'] = [
+	'players' => 15,
+	'city' => 'Orlando'
+];
+
+var_dump($basketballTeams);
+```
+
+Zadaci za vežbu:
+* Dodajte novi podniz na $basketballTeams iz poslednjeg primera. Neka to bude za klub ```Spartak``` iz grada:
+```Subotica```.
+* Šta mislite, šta će biti ako samo dodamo novi elemenat na kraj niza sa ovim codom
+```$basketballTeams[] = 'Sombor';```? A ako taj red koda još jednom ponovimo, kako će izgledati niz na kraju?

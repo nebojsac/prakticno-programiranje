@@ -48,6 +48,7 @@ Podsetite se gore šta koji deo ```for``` petlje znači i probajte sami odraditi
 Jedan od prvih matematičkih zadataka za vežbanje programiranje jeste ispisivanje Fibonačijevih brojeva. Fibonačijev niz brojeva počinje sa 0 i 1, a svaki sledeći broj predstavlja zbir prethodna dva. Dakle početak je 0,1,1,2,3,5,8,itd. Ograničimo se na prvih 50 brojeva. On se može rešiti na više načina, a jedan od tih načina uključuje petlje. Ako mislite da ga možete sami rešiti, predlažem vam da probate pre nego što nastavite tu. Ja ću vas u ovoj sekciji provesti korak po korak kroz rešavanje tog zadatka.
 
 Za početak, nastavićemo gde smo stali, i produžiti petlju do 50:
+
 ```php
 <?php
 for ($i = 0; $i < 50; $i++) {
@@ -57,6 +58,7 @@ for ($i = 0; $i < 50; $i++) {
 ?>
 ```
 E sad, ovo nije tačno ono što nama treba. Uz brojač ```$i``` ćemo pratiti koliko krugova smo napravili u petlji, ali ispis vrednosti tog brojača nam ne treba. Ispis trebamo početi sa 0 i 1, i svaki sledeći broj treba biti zbir prethodna dva. E sad, samo uraditi ```echo '0,2';``` nam neće puno pomoći. Moram biti u mogućnosti da sabiramo te brojeve, i zbog toga ćemo ih staviti u promenljive pre nego što ih ispišemo.
+
 ```php
 <?php
 $prethodniBroj = 0;
@@ -70,6 +72,7 @@ for ($i = 0; $i < 50; $i++) {
 ?>
 ```
 Petlju smo ispraznili jer nam nije koristio taj k**o**d. Sad želimo započeti ispisivanje Fibonačijevog niza. Dakle, rekli smo da je on zbir prethodna dva broja, iliti trenutnog i prethodnog broja. Napravićemo novu promenljivu $rezultat, čisto da bi mogli lakše pratiti šta se dešava. 
+
 ```php
 <?php
 $prethodniBroj = 0;
@@ -83,9 +86,11 @@ for ($i = 0; $i < 50; $i++) {
 }
 ?>
 ```
+
 Da li vidite problem u ovom k**o**du i bez pokretanja? Da, uvek će sabirati 0 i 1. Dakle, moramo malo džonglirati vrednosti. Zamislite da pravimo mentalnu belešku koji je "trenutni" a koji "prethodni" broj - počeli smo sa 0 i 1(možete sami na papiru pratiti logiku, možda pomogne). Saberemo ih, i dobijemo niz 0,1,1. Sada, mentalno moramo da se "pomerimo". Dakle, sada gledamo desnu jedinicu kao "trenutni" a levu jedinicu kao "prethodni" broj. Njih sabiramo, i dobijamo niz 0,1,1,2. Ponavljamo mentalno pomeranje pa 2 postaje novi "trenutni" broj, i tako dalje. 
 
 To što smo radili sa "mentalnim beleškama" u prethodnom paragrafu, sada trebamo uraditi u k**o**du:
+
 ```php
 <?php
 $prethodniBroj = 0;
@@ -102,7 +107,10 @@ for ($i = 0; $i < 50; $i++) {
 }
 ?>
 ```
-Da li vam je jasno šta se tu desilo? Ako nije, probajte da vokalizujete k**o**d, red po red, ponavljajući u petlji. Logika ide ovako:
+
+Da li vam je jasno šta se tu desilo? Ako nije, probajte da vokalizujete k**o**d, red po red,
+ponavljajući u petlji. Logika ide ovako:
+
 * Prethodni broj je 0, a trenutni 1. Ispišemo njih pre petlje ```0,1```
 * Brojac počinje od nule. Petlju ponavljamo dok brojač ne dođe do 50, i svakog kruga povećavamo brojač.
 * Počinjemo prvi krug, brojač $i je 0.
@@ -120,6 +128,7 @@ Da li vam je jasno šta se tu desilo? Ako nije, probajte da vokalizujete k**o**d
 * I tako sve dok je brojač manji od 50, kao što je navedeno u uslovu.
 
 Pokušajte sledeće zadatke rešiti sami:
+
 * Rekli smo da želimo ispisati 50 brojeva u Fibonačijevom nizu. Trenutno to nije slučaj. Koliko se trenutno brojeva ispiše, i kako ti ispraviti?
 * Kako bi ste ograničili petlju tako da se zaustavi nakon što se ispiše broj veći od 100?
 
@@ -180,6 +189,7 @@ echo 'Promenljiva $broj je sada ' . $broj;
 Sada će petlja ići sve dok je ```$broj``` manji od 50, i dok nije deljiv sa 7. Naravno, morate paziti šta radite, jer ako zadate nemoguć uslov, npr da $broj bude manji od 0 iako se samo povećava, možete dobiti beskonačnu petlju. Tada će se Apache privremeno zapucati i nećete moći ništa raditi dok on ne odluči da prekine proces. Mada je moja preporuka tada da sami ručno zaustavite i ponovo pokrenete Apache u Xamp Control panelu.
 
 Vredi spomenuti da ```do-while``` ima i druge formate, u kojima se uslov proverava na početku:
+
 ```php
 <?php
 $broj = 0;
