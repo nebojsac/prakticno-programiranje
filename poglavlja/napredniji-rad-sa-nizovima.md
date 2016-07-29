@@ -224,8 +224,8 @@ for ($i = 0; $i < $sizeOfArray; $i++) {
 ?>
 ```
 
-Sa tim dobijamo dinamičniji kod, i sada kad menjamo niz ```$weekDays``` ne moramo više posebno menjati 
-```$sizeOfArray```.
+Sa tim dobijamo dinamičniji kod, i sada kad menjamo niz ```$weekDays``` ne moramo više
+posebno menjati ```$sizeOfArray```.
 
 Sem što možemo ispisivati sadržaj nizova uz pomoć petlje, možemo i dodavati ili oduzimati elemente. Za sledeći primer 
 koristićemo neke od datumskih funkcija koje smo upoznali ranije:
@@ -371,7 +371,7 @@ var_dump($basketballTeams);
 Da bi pristupili elementima dublje u nizu koristimo dodatne uglaste zagrade ```[]```.
 U ovom slučaju, ulazimo u podniz sa indeksom ```'Bulls'```, i onda pristupamo indeksu ```'city'``` unutar njega.
 
-```
+```php
 <?php
 
 $basketballTeams = [
@@ -394,7 +394,7 @@ var_dump($basketballTeams);
 Sem brisanja, možemo i menjati sadržaj niza. Napišemo ime niza, i onda željene indekse na kojima želimo
 menjati vrednost. U ovom slučaju, ostavljamo da indeks ```['Bulls']['city']``` postoji, ali ga ostavljamo praznim.
 
-```
+```php
 <?php
 
 $basketballTeams = [
@@ -415,7 +415,7 @@ var_dump($basketballTeams);
 
 Kao i sa dosadašnjim nizovima, možemo dodati nove elemente. Sem toga, ti novi elementi mogu biti nizovi.
 
-```
+```php
 <?php
 
 $basketballTeams = [
@@ -439,7 +439,7 @@ var_dump($basketballTeams);
 ```
 
 Zadaci za vežbu:
-* Dodajte novi podniz na $basketballTeams iz poslednjeg primera. Neka to bude za klub ```Spartak``` iz grada:
-```Subotica```.
+* Dodajte novi podniz na $basketballTeams iz poslednjeg primera. Neka to bude za klub ```Spartak``` iz
+grada: ```Subotica```.
 * Šta mislite, šta će biti ako samo dodamo novi elemenat na kraj niza sa ovim codom
 ```$basketballTeams[] = 'Sombor';```? A ako taj red koda još jednom ponovimo, kako će izgledati niz na kraju?
