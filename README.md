@@ -9,7 +9,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
 
 1. [Uvod](#uvod)
  * [Imajte na umu](#imajte-na-umu)
- * [Zašto PHP?](#Zašto-php)
+ * [Zašto PHP?](#zašto-php)
  * [Šta će vam ovaj tekst pokazati](#Šta-će-vam-ovaj-tekst-pokazati)
  * [Potrebno predznanje(ukratko: skoro pa ništa)](#potrebno-predznanjeukratko-skoro-pa-ništa)
  * [Potrebni programi](#potrebni-programi)
@@ -26,7 +26,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
   * [Ukratko o boolean vrednostima](poglavlja/pocnimo-sa-kodom.md#ukratko-o-boolean-vrednostima)
  * [Logičke operacije](poglavlja/pocnimo-sa-kodom.md#logičke-operacije)
  * [Kratak pregled tipova podataka/promenljivih](poglavlja/pocnimo-sa-kodom.md#kratak-pregled-tipova-podatakapromenljivih)
-  * [Više o Boolean(istinitost)](poglavlja/pocnimo-sa-kodom.md#vise-o-booleanistinitost)
+  * [Više o Boolean(istinitost)](poglavlja/pocnimo-sa-kodom.md#više-o-booleanistinitost)
   * [Malo o strogoj jednakosti](poglavlja/pocnimo-sa-kodom.md#malo-o-strogoj-jednakosti)
 * [POST i GET](poglavlja/post-i-get.md)
 * [Osnove nizova](poglavlja/osnove-nizova.md)
@@ -40,7 +40,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
 * [Napredniji rad sa nizovima](poglavlja/napredniji-rad-sa-nizovima.md)
  * [Nizovi i For petlja](poglavlja/napredniji-rad-sa-nizovima.md#nizovi-i-for-petlja)
  * [Nizovi i Foreach petlja](poglavlja/napredniji-rad-sa-nizovima.md#nizovi-i-foreach-petlja)
- * [Višedimenzionalni nizovi](poglavlja/napredniji-rad-sa-nizovima.md#visedimenzionalni-nizovi)
+ * [Višedimenzionalni nizovi](poglavlja/napredniji-rad-sa-nizovima.md#višedimenzionalni-nizovi)
 
 ## Teme u najavi
 
