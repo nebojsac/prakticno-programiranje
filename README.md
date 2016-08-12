@@ -41,6 +41,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * [Nizovi i For petlja](poglavlja/napredniji-rad-sa-nizovima.md#nizovi-i-for-petlja)
  * [Nizovi i Foreach petlja](poglavlja/napredniji-rad-sa-nizovima.md#nizovi-i-foreach-petlja)
  * [Višedimenzionalni nizovi](poglavlja/napredniji-rad-sa-nizovima.md#višedimenzionalni-nizovi)
+* [Funkcije](poglavlja/funkcije.md)
 
 ## Teme u najavi
 
