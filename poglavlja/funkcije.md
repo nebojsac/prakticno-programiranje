@@ -298,15 +298,185 @@ function calculator($firstNumber, $secondNumber, $operation)
 ?>
 ```
 
-//TODO parametri vs argumenti
-//TODO pozovemo funkciju u sve 4 kombinacije
-//TODO prosirimo funkciju da ima lepsi ispis (a + b = rez)
-//TODO variable scope
-//TODO default vrednost parametra
+## Argumenti vs Parametri
+
+Vredi se osvrnuti malo na razliku između parametara i argumenata. Najjednostavnije objašnjenje jeste da su argumenti
+podaci koje šaljemo funkciji, a parametri su promenljive u koje se ti podaci smeštaju. Ako pogledamo prethodni primer,
+u tom slučaju su parametri funkcije ```$firstNumber```, ```$secondNumber``` i ```$operation```. A u pozivu funkcije 
+```calculator(1, 3, 'add')``` su ```1```, ```3``` i ```'add'``` argumenti.
+
+Da ne bude zabune, promenljive se mogu koristiti i u toku pozvanja funkcije, kao što smo to i do sada radili sa 
+```var_dump``` i ```print_r()``` funkcijama. Npr, sledeća dva poziva funkcije ```calculator()``` su ista:
+
+```php
+<?php 
+// u oba slucaja koristimo iste argumente:
+
+calculator(1, 3, 'add');
+
+$a = 1;
+$b = 3;
+$op = 'add';
+calculator($a, $b, $op);
+?>
+```
+
+Kada napravimo neku funkciju, prva prednost je ta što je sada možemo testirati u više varijanti, u samo par redova. Pa 
+ajde onda ovu funkciju da testiramo:
+
+
+```php
+<?php
+
+function calculator($firstNumber, $secondNumber, $operation)
+{
+
+	if ($operation == 'add') {
+		$result = $firstNumber + $secondNumber;
+	} elseif ($operation == 'subtract') {
+		$result = $firstNumber - $secondNumber;
+	} elseif ($operation == 'multiply') {
+		$result = $firstNumber * $secondNumber;
+	} elseif ($operation == 'divide') {
+		$result = $firstNumber / $secondNumber;
+	} else {
+		$result = 'Pogresna operacija.';
+	}
+
+	echo 'Rezultat je: ' . $result . '<br />';
+}
+
+
+calculator(1, 3, 'add');
+calculator(1, 3, 'subtract');
+calculator(1, 3, 'multiply');
+calculator(1, 3, 'divide');
+calculator(1, 0, 'divide');
+
+?>
+```
+
+Sad smo isprobali sve moguće rezultate(ne računajući one koji dovode do PHP greške). Ali sada imamo malo nečitak ispis:
+
+```
+Rezultat je: 4
+Rezultat je: -2
+...
+```
+
+Vežba: Bilo bi korisnije kada bismo videli koje brojeve, koje operacije koriste. Promenite funkciju tako da ispis bude:
+
+```
+Rezultat operacije 1 add 3 je 4
+Rezultat operacije 1 subtract 3 je 2
+...
+```
+
+Možete to i lepše uraditi ako ste raspoloženi za vežbu: da ispiše matematički, npr: ``` 1 + 3 = 4 ```.
+
+## Doseg promenljivih - Variable Scope
+
+Još jedna značajna stavka kod funkcija jeste ponašanje promenljivih, odnosno njihov doseg(eng: scope). Pogledajmo
+sledeći primer:
+
+```php
+<?php
+function calculator($firstNumber, $secondNumber, $operation)
+{
+
+	if ($operation == 'add') {
+		$result = $firstNumber + $secondNumber;
+	} elseif ($operation == 'subtract') {
+		$result = $firstNumber - $secondNumber;
+	} elseif ($operation == 'multiply') {
+		$result = $firstNumber * $secondNumber;
+	} elseif ($operation == 'divide') {
+		$result = $firstNumber / $secondNumber;
+	} else {
+		$result = 'Pogresna operacija.';
+	}
+
+	echo 'Rezultat je: ' . $result . '<br />';
+}
+
+
+calculator(1, 3, 'add');
+?>
+```
+
+Primera radi, ako bismo probali van funkcije da koristimo promenlijvu ```$result```, dobili bi grešku da ta promenljiva
+ne postoji. Znači sledeći primer bi izbacio grešku:
+
+```php
+<?php
+function calculator($firstNumber, $secondNumber, $operation)
+{
+
+	if ($operation == 'add') {
+		$result = $firstNumber + $secondNumber;
+	} elseif ($operation == 'subtract') {
+		$result = $firstNumber - $secondNumber;
+	} elseif ($operation == 'multiply') {
+		$result = $firstNumber * $secondNumber;
+	} elseif ($operation == 'divide') {
+		$result = $firstNumber / $secondNumber;
+	} else {
+		$result = 'Pogresna operacija.';
+	}
+
+	echo 'Rezultat je: ' . $result . '<br />';
+}
+
+
+calculator(1, 3, 'add');
+echo $result; // dolazi do greške
+
+?>
+```
+
+Ali ajde da se vratimo na neki manji primer. Obična funkcija za ispisivanje imena i pozdravljanja:
+
+```php
+<?php
+
+$myName = 'Nick';
+greetings($myName);
+
+function greetings($name) {
+	echo 'Hi ' . $name . '!';
+}
+?>
+```
+
+Ovaj primer radi kako treba. Ali ako bismo probali koristiti ```$myName``` unutar funkcije, ili ```$name``` van nje,
+dobili bi smo greške.
+
+```php
+<?php
+
+$myName = 'Nick';
+greetings($myName);
+
+function greetings($name) {
+	echo 'Hi ' . $name . '!';
+
+	// $myName ne postoji unutar funkcije
+	echo '$myName is ' . $myName;
+}
+
+// $name ne postoji van funkcije
+echo '$name is ' . $name;
+
+?>
+```
+
+Zapamtite, za funkciju jedino postoje promenljive koje ona dobije preko parametara, i koja unutar sebe definiše.
+Isto tako, code koji se izvršava nema pristup promenljivama koje su definisane u funkcijama koje se pozivaju. 
+(Izuzetak su globalne promenljive, ali više o njima neki drugi put)
+
+## Podrazumevane(default) vrednosti parametara
+
+
 //TODO calculatorDivide(), return values
-
-
-
-
 
 //TODO: zadaj zadatke
