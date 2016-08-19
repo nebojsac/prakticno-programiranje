@@ -476,6 +476,79 @@ Isto tako, code koji se izvršava nema pristup promenljivama koje su definisane 
 
 ## Podrazumevane(default) vrednosti parametara
 
+Prethodna funkcija ```function greetings($myName)``` će nam izbaciti grešku u slučaju da joj ne prosledimo neki podatak za
+taj jedan parametar. Na primer, kad bismo je pozvali ovako: ```greetings()``` izbacila bi grešku da funkcija očekuje
+jedan parametar. To je zato što se taj parametar smatra obaveznim.
+
+Postoji i način da se određeni parametri tretiraju kao neobavezni. Na primer:
+
+```php
+<?php
+
+greetings();
+
+function greetings($name = '') {
+	echo 'Hi ' . $name . '!';
+
+	echo '$myName is ' . $myName;
+}
+
+?>
+```
+
+U ovom slučaju, promenljiva ```$name``` će biti prazan string ako ništa nije prosleđeno u funkciju. To nije strašno
+korisno sada, ali bar ne izbacuje grešku. Možemo staviti i određenu vrednost da ima, ne mora to biti prazan string:
+
+```php
+<?php
+
+greetings();
+
+function greetings($name = 'Unknown') {
+	echo 'Hi ' . $name . '!';
+
+	echo '$myName is ' . $myName;
+}
+
+?>
+```
+
+Ovaj code će sada ispisati ```$myName is: Unknown``` što može biti korisno u određenim situacijama. Isto tako možemo
+davati podrazumevane vrednosti većem broju parametara u funkciji, npr:
+
+```php
+<?php
+function calculator($firstNumber, $secondNumber = 0, $operation = 'add')
+{
+
+	if ($operation == 'add') {
+		$result = $firstNumber + $secondNumber;
+	} elseif ($operation == 'subtract') {
+		$result = $firstNumber - $secondNumber;
+	} elseif ($operation == 'multiply') {
+		$result = $firstNumber * $secondNumber;
+	} elseif ($operation == 'divide') {
+		$result = $firstNumber / $secondNumber;
+	} else {
+		$result = 'Pogresna operacija.';
+	}
+
+	echo 'Rezultat je: ' . $result . '<br />';
+}
+
+
+calculator(1);
+calculator(3, 3);
+calculator(4, 3, 'subtract');
+
+?>
+```
+
+Izmenili smo funkciju ```calculator()``` tako da je obavezan samo prvi parametar. Druga dva imaju 'default' vrednosti
+```0``` i ```'add'``` u slučaju da nisu prosleđeni argumenti na tim pozicijama. U slučaju da pozivamo funkciju sa svim
+argumentima, tada će ona koristiti vrednosti koje smo prosledili.
+
+## Return - vraćanje rezultata funkcije 
 
 //TODO calculatorDivide(), return values
 
