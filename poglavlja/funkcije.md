@@ -374,7 +374,7 @@ Rezultat operacije 1 subtract 3 je 2
 
 Možete to i lepše uraditi ako ste raspoloženi za vežbu: da ispiše matematički, npr: ``` 1 + 3 = 4 ```.
 
-## Doseg promenljivih - Variable Scope
+## Variable Scope
 
 Još jedna značajna stavka kod funkcija jeste ponašanje promenljivih, odnosno njihov doseg(eng: scope). Pogledajmo
 sledeći primer:
@@ -474,7 +474,7 @@ Zapamtite, za funkciju jedino postoje promenljive koje ona dobije preko parameta
 Isto tako, code koji se izvršava nema pristup promenljivama koje su definisane u funkcijama koje se pozivaju. 
 (Izuzetak su globalne promenljive, ali više o njima neki drugi put)
 
-## Podrazumevane(default) vrednosti parametara
+## Default values
 
 Prethodna funkcija ```function greetings($myName)``` će nam izbaciti grešku u slučaju da joj ne prosledimo neki podatak za
 taj jedan parametar. Na primer, kad bismo je pozvali ovako: ```greetings()``` izbacila bi grešku da funkcija očekuje
@@ -548,8 +548,254 @@ Izmenili smo funkciju ```calculator()``` tako da je obavezan samo prvi parametar
 ```0``` i ```'add'``` u slučaju da nisu prosleđeni argumenti na tim pozicijama. U slučaju da pozivamo funkciju sa svim
 argumentima, tada će ona koristiti vrednosti koje smo prosledili.
 
-## Return - vraćanje rezultata funkcije 
+## Return
 
-//TODO calculatorDivide(), return values
+Funkcije koje ispisuju podatke imaju svoju svrhu, poput ```print_r()``` i ```var_dump```, ali velika većina funkcija
+ne ispisuje vrednost direktno na ekran. Većina funkcija vraća neku vrednost, nakon čega programerer može da odluči da li
+da taj podatak ispiše ili da radi još nešto sa njim.
 
-//TODO: zadaj zadatke
+Primer takve funkcije je ```date()```. Ako samo napišemo samo ```date('Y');```, to samo po sebi neće ispisati trenutnu
+godinu. Proračun će se desiti u pozadini, ali neće biti ispisan na ekran. Da bi ispisali rezultat morali  bi koristiti
+```echo date('Y');```. Počnimo sa nekim veoma jednostavnim primerima:
+
+```php
+<?php
+function getTheNumberThree() {
+	return 3;
+}
+?>
+```
+
+Funkcija ```getTheNumberThree()``` nije naročito korisna, ali je koristimo da bi videli šta radi ```return```. Na
+primer, ako bismo pozvali ovu funkciju samo, ne bi došlo do ispisa na ekranu. Zato nam treba ```echo```.
+
+```php
+<?php
+function getTheNumberThree() {
+	return 3;
+}
+
+getTheNumberThree(); // nece ispisati nista na ekran
+
+$number = getTheNumberThree();
+echo $number; // tu vec dobijamo ispis 3
+
+echo getTheNumberThree(); // a mozemo i preskociti promenljivu, i direktno koristiti funkciju uz echo
+
+?>
+```
+
+Znači, za razliku od dosadašnjih funkcija koje smo pisali, ova ne ispisuje direktno na ekran, nego nam vraća neku
+vrednost. Sad ćemo to primeniti na naš digitron.
+
+
+```php
+<?php
+function calculator($firstNumber, $secondNumber = 0, $operation = 'add')
+{
+
+	if ($operation == 'add') {
+		$result = $firstNumber + $secondNumber;
+	} elseif ($operation == 'subtract') {
+		$result = $firstNumber - $secondNumber;
+	} elseif ($operation == 'multiply') {
+		$result = $firstNumber * $secondNumber;
+	} elseif ($operation == 'divide') {
+		$result = $firstNumber / $secondNumber;
+	} else {
+		$result = 'Pogresna operacija.';
+	}
+
+	$message = 'Rezultat je: ' . $result . '<br />';
+
+	return $message;
+}
+
+//Napomena: morali smo dodati echo da bi došlo do ispisa
+echo calculator(1);
+echo calculator(3, 3);
+echo calculator(4, 3, 'subtract');
+
+?>
+```
+
+Hmm, ali ipak nije baš smisleno da funkcija za digitron vraća poruku u slučaju računanja(osim ako se nešto neočekivano
+desilo). Promenićemo naš digitron da vraća samo rezultat matematičke operacije.
+
+```php
+<?php
+function calculator($firstNumber, $secondNumber = 0, $operation = 'add')
+{
+
+	if ($operation == 'add') {
+		$result = $firstNumber + $secondNumber;
+	} elseif ($operation == 'subtract') {
+		$result = $firstNumber - $secondNumber;
+	} elseif ($operation == 'multiply') {
+		$result = $firstNumber * $secondNumber;
+	} elseif ($operation == 'divide') {
+		$result = $firstNumber / $secondNumber;
+	} else {
+		$result = 0; // smatraćemo da je rezultat nula u slučaju deljenja sa nulom
+	}
+
+	return $result;
+}
+
+$result = calculator(100, 50);
+echo 'Rezultat je ' . $result;
+
+echo '<br />';
+echo $calculator($result, 2, 'multiply'); // koristiom rezultat prošle operacije i množimo ga sa 2
+
+?>
+```
+
+Ova funkcija za digtron ima više smisla. Programer koji je koristi sada može da odluči šta će raditi sa rezultatom.
+Može ga odmah ispisati ako treba, a može da nastavi da koristi taj rezultat za dalje operacije.
+
+Sad kad znamo za ```return```, možemo pisati više manjih funkcija, koje će se nadovezivati sa rezultatima. Napisaćemo
+funkcije koje će vršiti određene operacije na nekom nizu, i vraćati rezultat.
+
+
+```php
+<?php
+
+function removeStrings($array) {
+	foreach ($array as $key => $value) {
+		if (is_string($value)) {
+			unset($array[$key]);
+		}
+	}
+	return $array;
+}
+
+function getArraySum($array) {
+	$sum = 0;
+	foreach ($array as $key => $value) {
+		$sum = $sum + $value;
+	}
+	return $sum;
+}
+
+$array1 = [
+	1,
+	200,
+	'555',
+	33,
+	'333-333',
+	'John',
+	'<>'
+];
+
+$arrayWithoutStrings = removeStrings($array1);
+
+echo getArraySum($arrayWithoutStrings);
+
+?>
+```
+
+Gde god je moguće koristite ```return``` u vašim funkcijama. Kao takve su mnogo korisnije i fleksibilnije.
+
+## Include
+
+Još jedna stavka pre nego što pređemo na zadatke. ```include()``` je veoma korisna funkcija za organizovanje coda.
+Njena svrha je da, tako reći, "uključite" određeni PHP fajl unutar drugog php fajla. Neki jednostavan primer:
+
+```php
+<?php
+// ispisbrojeva.php - ime fajla
+
+$one = 'jedan';
+$two = 'dva';
+$three = 'tri';
+
+echo $one . $two . $three;
+
+?>
+```
+
+Gornji code će ispisati ```jedandvatri```. Izmenićemo ga da koristi ```include()``` i dva fajla.
+
+```php
+<?php
+// brojevi.php
+
+$one = 'jedan';
+$two = 'dva';
+$three = 'tri';
+
+?>
+```
+
+
+```php
+<?php
+// ispis.php
+
+include('brojevi.php');
+
+echo $one . $two . $three;
+
+?>
+```
+
+Da bi gornji code sa dva fajla radio, ovi fajlovi moraju biti u istom folder, ali inače to nije obavezno. 
+```include()``` možete smatrati kao način da sav vode iz nekog drugog fajla koristite u trenutnom fajlu iz kojeg
+pozivate ```include()```. Ovo postaje naročito korisno na projektima na kojima imate više fajlova, u kojima želite
+koristiti iste funkcije. Uz pomoć ```include()``` možete napisati sve vaše funkcije u jedan fajl, i onda taj fajl
+pozivati sa ```include()``` u fajlovima u kojima su vam potrebne.
+
+Na primer, ako uzmemo našu funkciju za digitron i stavimo je u fajl sa imenom ```functions.php```, moćemo je koristiti
+u drugom fajlu u kojem koristimo ```include()```.
+
+```php
+<?php
+// functions.php
+
+function calculator($firstNumber, $secondNumber = 0, $operation = 'add')
+{
+
+	if ($operation == 'add') {
+		$result = $firstNumber + $secondNumber;
+	} elseif ($operation == 'subtract') {
+		$result = $firstNumber - $secondNumber;
+	} elseif ($operation == 'multiply') {
+		$result = $firstNumber * $secondNumber;
+	} elseif ($operation == 'divide') {
+		$result = $firstNumber / $secondNumber;
+	} else {
+		$result = 0; // smatraćemo da je rezultat nula u slučaju deljenja sa nulom
+	}
+
+	return $result;
+}
+?>
+```
+
+```php
+<?php
+include('functions.php');
+
+echo calculator(1, 3);
+
+?>
+```
+
+
+Zadaci za vežbu:
+
+* Uzeti postojeću ```calculator()``` funkciju i zameniti određene operacije u njoj sa novim, manjim funkcijama. Red sa
+sabiranjem zamenite sa novom funkcijom ```getSum()``` koja samo sabira dva broja i vraća rezultat. 
+
+* Na isti način, napisati funkcije ```getDifference()``` i  ```getProduct()``` i iskoristiti ih gde ima smisla. 
+
+* Sve ove funkcije držite u zasebnom fajlu ```functions.php```, i taj fajl "uključite" u fajl sa kojim radite.
+
+* Napišite funkciju ```removeZeroes()``` koja za unešeni niz vrati isti taj niz, samo bez nula.
+
+* Napišite funkciju koja briše sve brojeve iz niza koji su manji od nule ```removeNegatives()```. Ulazni parametar je
+niz, a treba da vrati taj niz bez negativnih brojeva.
+
+* Sad kada imate te dve funkcije, pozovite ih jednu za drugom, na istom nizu, npr: ```$array1 = [1, 0, -5, 10]```.
+Nakon pozivanja obe funkcije, ispišite krajnji rezultat na ekran, koji bi trebao da bude niz sa elementima 1 i 10.

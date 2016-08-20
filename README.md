@@ -42,6 +42,11 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * [Nizovi i Foreach petlja](poglavlja/napredniji-rad-sa-nizovima.md#nizovi-i-foreach-petlja)
  * [Višedimenzionalni nizovi](poglavlja/napredniji-rad-sa-nizovima.md#višedimenzionalni-nizovi)
 * [Funkcije](poglavlja/funkcije.md)
+ * [Argumenti vs Parametri](poglavlja/funkcije.md#argumenti-vs-parametri)
+ * [Variable Scope](poglavlja/funkcije.md#variable-scope)
+ * [Default Values](poglavlja/funkcije.md#default-values)
+ * [Return](poglavlja/funkcije.md#return)
+ * [Include](poglavlja/funkcije.md#nclude)
 
 ## Teme u najavi
 
@@ -50,10 +55,6 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * XAMPP radi ali "Apache" pokazuje grešku sa PORTom
  * Ne znam pokrenuti primer u browseru
  * U browseru vidim isto što u editoru
-* [Funkcije](#funkcije)
- * [Naše funkcije](#naše-funkcije)
- * [Argumenti vs Parametri](#argumenti-vs-parametri)
- * [Povratne vrednosti](#povratne-vrednosti)
  * [Rekurzija (napredno)](#rekurzija-napredno)
 * [Klase](#klase)
  * [Atributi, Metode, Vidljivost](#atributi-metode-vidljivost)
