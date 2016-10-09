@@ -14,6 +14,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * [Potrebno predznanje(ukratko: skoro pa ništa)](#potrebno-predznanjeukratko-skoro-pa-ništa)
  * [Potrebni programi](#potrebni-programi)
  * [Saveti za savladavanje materije](#saveti-za-savladavanje-materije)
+ * [Traženje pomoći](#traženje-pomoći)
 2. Podešavanje radnog okruženja
  * [Windows](poglavlja/podešavanje-radnog-okruženja.md)
  * [MacOS](poglavlja/podešavanje-radnog-okruženja-MacOS.md)
@@ -65,25 +66,28 @@ Svrha ovog teksta je da se programiranje približi apsolutnim početnicima u cil
 
 ### Imajte na umu
 
-Ovaj tekst je "rad u toku", što znači da je nesavršen, nedovršen i nedovoljan. Ako je ovaj tekst došao do vas, pozivam vas da mi šaljete predloge, kritike i utiske na nebojsac@gmail.com, ili nađite drugi kontakt na http://nickcinger.com. Takođe, nemojte baš sa svakim deliti(npr. na fejsbuk) pogotovo u ovom nedovršenom stanju. Tretirajte ovaj fajl kao kopiju za evaulaciju/unapređenje. Radije bih da za sada ovo koriste u početku samo ljudi koji su spremni podeliti utiske samnom. A kasnije se nadam da će biti dostupno i pristupačno svima.
+Ovaj tekst je "rad u toku", što znači da je nesavršen, nedovršen i da će vremenom biti unapređen. Ukoliko pronađete neke greške, ili imate neke predloge, prosledite mi ih, biću vam zahvalan. U trenutnom stanju je namenjen kao pomoćni materijal za kurs programiranja kojeg vodim. Plan je da ova dokumentacija uvek bude besplatna i dostupna svima.
 
 ### Zašto PHP?
 
 * Lak za početi
 * Brzo i jednostavno se vide opipljivi rezultati (web stranice)
-* Među najkorišćenijim jezicima na svetu
-* Jako fleksibilan za rad, puno dopušta (što bi neki rekli da je mana, ali za učenje je prednost što se mene tiče)
+* Odličan dodatak na znanje HTML-a i CSS
+* Među najkorišćenijim jezicima na svetu(većina blogova i stranica na internetu, WordPress, Wikipedia, Facebook i drugi)
+* Jako fleksibilan za rad i veoma popustljiv(tj. nije strog)
 * I naravno, zato što je meni najbliži :)
 
 Svako ima svog favorita, mnogi će vam reći da su Python i Javascript bolji izbori za početak. Ja smatram da je svejedno sa kojim krenete, jer kada savladate osnove i svarite neke naprednije pojmove, promena jezika postane trivijalna. 
 
-Ja konkretno ne bih ovde da koristim Python jer je malo teži za podesiti za Windows korisnike, i jako je strog što se tiče sintakse što dovodi do toga da više gubimo vreme na potrebe jezika u početku, nego na to da napravimo nešto što radi(neko će reći da je to prednost). A Javascript ne bih iz razloga što je meni lično zanimljivije da programiram na strani servera nego na strani browsera, a ne mogu reći da sam veliki poznavalac Node.js-a.
+Ja konkretno ne bih ovde da koristim Python jer je malo teži za podesiti za Windows korisnike, i jako je strog što se tiče sintakse, što dovodi do toga da više gubimo vreme na potrebe jezika u početku, nego na to da napravimo nešto što radi(neko će reći da je to prednost). A Javascript ne bih iz razloga što je cilj ove dokumentacije više da se vidi šta se dešava "ispod haube".
 
 ### Šta će vam ovaj tekst pokazati
 
-Ideja je da svako može savladati osnovne pojmove programiranje, ma kolko mu to delovalo strano. Ovde ću preleteti neke osnovne pojmove, komande i sintakse, i usput ću davati "domaće zadatke" koje ćete rešavati sami. Naravno, ako se zapne negde, možete mi pisati, pa ćemo pogledati šta nije jasno.
+Ideja je da svako može savladati osnovne pojmove programiranje, ma koliko mu to delovalo strano. Ovde ću preleteti neke osnovne pojmove, komande i sintakse, i usput ću davati "domaće zadatke" koje ćete rešavati sami. Naravno, ako se zapne negde, možete mi pisati, pa ćemo pogledati šta nije jasno.
 
 Jedna napomena samo, uveliko ćemo preskakati u početku neke sigurnosne osnove radi brzine. Kada budete radili na pravim projektima biće bitno učiti o bezbednosti. Možda i jedan od budućih tekstova bude imao osvrt na to.
+
+Ako ste polaznici kursa, ova dokumentacija će vam pomoći da nadoradite znanje iz kursa, da ga obnovite i da iste pojmove vidite objašnjene uz nove primere.
 
 ### Potrebno predznanje(ukratko: skoro pa ništa)
 
@@ -92,10 +96,18 @@ Za potrebe ovog teksta ću pretpostaviti da znate instalirati jednostavne progra
 ### Potrebni programi
 
 * XAMPP ako ste na Windowsu, Apache ako ste na Linuxu ili MacOS-u. 
-* Program za rad sa kodom po izboru.
+* Program za rad sa kodom po izboru(Notepad++, Sublime Text 3 i slično).
 
 ### Saveti za savladavanje materije
 
-* Nemojte copy/paste primere i k**o**d. Mnogo će vam pre ući u naviku ako *SVE* budete prekucavali. U momentima ćete imati čudne, nejasne greške, ali to je priroda posla. Umesto da kopirate k**o**d, probajte pronaći grešku i rešiti je.
-* Nemojte preskakati sekcije. Iako nisu linearno i direktno povezane, imaćete poteškoća sa savladavanjem materije ako budete imali rupe u znanju. Što dalje budete nastavili tako to će teže ići. Ponovite sekciju više puta dok nije jasna.
+* Nemojte copy/paste primere i _code_. Mnogo će vam pre ući u naviku ako *SVE* budete prekucavali. U momentima ćete imati čudne, nejasne greške, ali to je priroda posla. Umesto da kopirate _code_, probajte pronaći grešku i rešiti je.
+* Nemojte preskakati sekcije. Iako nisu linearno i direktno povezane, imaćete poteškoća sa savladavanjem materije ako budete imali rupe u znanju. Što dalje budete nastavili tako, to će teže i ići. Ponovite sekciju više puta dok nije jasna, i vratite se na već pređene sekcije po potrebi.
 * Ako sekcija nije jasna i posle drugog pokušaja, pišite mi. Veoma je moguće da je sekcija nepotpuna ili jednostavno nejasna. Lako mi je da preskočim neki korak koji uzimam zdravo za gotovo posle toliko godina rada, ali zato mi treba povratna informacija od *Vas* da to ispravim.
+* Ako zaglavite na nekom zadatku, nemojte odmah tražiti pomoć od drugog. Probajte i sami da rešite.
+
+### Traženje pomoći
+
+* Obavezno pokušajte prvo sami rešiti problem. Ponovite materiju pa probajte opet.
+* Ako niste uspeli rešiti, spremite se da odgovorite na sledeća pitanja:
+ * "Šta si do sada probao/la?"
+ * "U kom momentu(na kom redu) se dešava nešto što ti nije jasno?"
