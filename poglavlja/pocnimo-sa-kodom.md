@@ -18,30 +18,30 @@ U browseru bi trebali videti tekst "Dobar dan"(bez navodnika). Sa ovim smo potvr
 
 **<?php** označava početak PHP koda. To je "php open tag". Bez toga, sve što je u fajlu bi bilo tretirano kao običan tekst.
 
-**echo** služi za ispis na ekran(u ovom slučaju). Posle njega možete napisati neki tekst, i staviti pod navodnike. Probajte i sami sa nečim drugim. Radi i sa jednostrukim i sa dvostrukim navodnicima. 
+```echo``` služi za ispis na ekran(u ovom slučaju). Posle njega možete napisati neki tekst, i staviti pod navodnike. Probajte i sami sa nečim drugim. Radi i sa jednostrukim i sa dvostrukim navodnicima. 
 
-Na kraj svakog reda koda u PHP-u treba da se nalazi tačka-zarez **;** u suprotnom ćete dobiti grešku. (Tačnije bi bilo reći na kraju svake komande, ali nećemo komplikovati sad)
+Na kraj svakog reda koda u PHP-u treba da se nalazi tačka-zarez ```;``` u suprotnom ćete dobiti grešku. (Tačnije bi bilo reći na kraju svake komande, ali nećemo komplikovati sad)
 
-**?>** označava kraj PHP koda. Generalno je neobavezan u fajlovima koji sadrže isključivo php kod.
+```?>``` označava kraj PHP koda. Generalno je neobavezan u fajlovima koji sadrže isključivo php kod.
 
 Ajmo sledeći korak. Vreme da se upoznamo sa promenljivama. Prekucajte sledeći kod u vaš index.php fajl, sačuvajte ga, i osvežite stranicu u browseru.
 ```php
 <?php
-$ime = 'Nebojša';
-echo 'Zdravo' . $ime;
+$name = 'Nebojša';
+echo 'Zdravo' . $name;
 ?>
 ```
 U browseru bi trebalo da vidite tekst "ZdravoNebojša".
-**$ime** je promenljiva, što se u PHPu prepozna tako što ima dolar znak **$** ispred. Umesto "ime" tu može biti skoro bilo šta(ograničenja možete naći na netu), ali za početak ćemo se držati teksta, bez razmaka. Vežbe radi, ubacite tu svoje ime i osvežite stranicu.
+```$name``` je promenljiva, što se u PHPu prepozna tako što ima dolar znak ```$``` ispred. Umesto ```name``` tu može biti skoro bilo šta(ograničenja možete naći na netu), ali za početak ćemo se držati teksta, bez razmaka. Vežbe radi, ubacite tu svoje ime i osvežite stranicu.
 
 **Tačka(.)** se u ovom slučaju koristi za spajanje dva teksta, radi lakšeg ispisa. Ne mora biti razmak između tačke i susednih karaktera, ali ja stavljam radi preglednosti koda.
 
-U programiranju, za tekst se obično kaže da je on **string**, čisto da budete upoznati sa tim pojmom. **string** je ustvari niz pojedinačnih karaktera i predstavlja **tip** promenljive tj. podatka.
+U programiranju, za tekst se obično kaže da je on ```string```, čisto da budete upoznati sa tim pojmom. ```string``` je ustvari niz pojedinačnih karaktera i predstavlja **tip** promenljive tj. podatka.
 
-**Promenljive** će vam biti glavni pojam za podatke u vašem kodu. U promenljive se pohranjuju podaci raznih tipova i veličina i koriste se za baratanje sa i poređenje tih podataka. Zamislite to kao kutiju u koju možete staviti bilo šta. Na stranu kutije napišete šta drži, na primer **$knjiga**, i možete u nju staviti "Harry Potter", ili zameniti sa "Twilight"(_nemojte_). Promenljive se koriste za privremeno držanje podataka da bi se sa njima kasnije mogle raditi zanimljivije stvari(ispis, proračuni, odlučivanje, itd.)
+**Promenljive** će vam biti glavni pojam za podatke u vašem kodu. U promenljive se pohranjuju podaci raznih tipova i veličina i koriste se za baratanje sa i poređenje tih podataka. Zamislite to kao kutiju u koju možete staviti bilo šta. Na stranu kutije napišete šta drži, na primer ```$knjiga```, i možete u nju staviti "Harry Potter", ili zameniti sa "Twilight"(_nemojte_). Promenljive se koriste za privremeno držanje podataka da bi se sa njima kasnije mogle raditi zanimljivije stvari(ispis, proračuni, odlučivanje, itd.)
 
 Prva lagana vežba u ovom tekstu će biti da uradite sledeće:
-* Popravite kod za ispis imena, da ima razmak između "Zdravo" i ispisanog imena. Zapamtite, **echo** ispisuje ono što je unutar navodnika i promenljive.
+* Popravite kod za ispis imena, da ima razmak između "Zdravo" i ispisanog imena. Zapamtite, ```echo``` ispisuje ono što je unutar navodnika i promenljive.
 * Proširite rečenicu. Neka ispiše nešto kao "Zdravo Nebojša, divan dan, zar ne?". Možete proširiti postojeći red koda, ili dodati novi ispod.
 
 ## Uslovi (IF/ELSE)
@@ -49,20 +49,21 @@ Ne bismo daleko stigli sa samim ispisom promenljiva. Da bi naši programi radili
 
 ```php
 <?php
-$ime = 'Nebojša';
-$brojGodina = 27;
+$name = 'Nebojša';
+$age = 27;
 
-if ($brojGodina < 18) {
-	echo $ime . ', pa ti nemaš ni 18 godina!';
+if ($age < 18) {
+	echo $name . ', pa ti nemaš ni 18 godina!';
 } else {
-	echo $ime . ', pa ti si već odrasla osoba.';
+	echo $name . ', pa ti si već odrasla osoba.';
 }
 ?>
 ```
 
-Oke, imamo tu sad više novih pojmova. Za početak, imamo novu promenljivu **$brojGodina** i u nju stavljamo celi broj(tj. integer, govoreći programerski). U daljem kodu taj broj koristimo u našem uslovu i poredimo ga sa brojem 18. Kad bi vokalizovali ovaj kod, glasio bi "Ako je $brojGodina manji od 18, ispiši prvu rečenicu, u suprotnom ispiši drugu".
+Oke, imamo tu sad više novih pojmova. Za početak, imamo novu promenljivu ```$age``` i u nju stavljamo celi broj(tj. integer, govoreći programerski). U daljem kodu taj broj koristimo u našem uslovu i poredimo ga sa brojem 18. Kad bi vokalizovali ovaj kod, glasio bi "Ako je $age manji od 18, ispiši prvu rečenicu, u suprotnom ispiši drugu".
 
 Litičaste zagrade ```{}``` se koriste za odvajanje celina koda koje obuhvata neki uslov. U ovom primeru "if" i "else" deo imaju samo po jedan red koda unutar njih, ali tu obično bude i više. Kao šablon za korišćenje IF uslova, može vam koristiti ovo(dve kose crte // označavaju redove sa komentarima u kodu, koji se ne izvršavaju):
+
 ```php
 <?php
 if ($nekiUslov) {
@@ -84,7 +85,7 @@ U uslovu koristimo matematičko poređenje "manje od", tj. simbol <. Neki drugi 
 * === "stroga jednakost", malo napredniji pojam kojeg ćemo ostaviti za kasnije.
 
 Vežbe radi, uradite sledeće:
-* Promenite **$brojGodina** tako da ispiše drugu rečenicu kad osvežite stranicu.
+* Promenite ```$age``` tako da ispiše drugu rečenicu kad osvežite stranicu.
 * Zamenite dva ispisana teksta u kodu, da prvi bude za **"odraslu osobu"**. Izmenite uslov da ispisuje tačnu rečenicu na osnovu broja godina.
 
 ## Napredniji Uslovi
@@ -195,6 +196,7 @@ Namerno smo ponovili (pomalo neprecizan) primer od malopre, i namerno smo odvoji
 * Gore navadeni AND i OR se mogu koristiti kombinovano više puta u uslovima, a postoje i XOR i NOR koje nećemo sada prelaziti. Kod komplikovanijih uslova je korisno stavljati zagrade () radi lakšeg odvajanja logičkih celina.
 
 Vežba će biti vezana za sledeći kod:
+
 ```php
 <?php
 // prvi:
@@ -257,6 +259,7 @@ E sad, vredi skrenuti pažnju na to da svaka vrednost ima svoju ekvivalentnu Boo
 ### Malo o strogoj jednakosti
 
 Dva znaka jednakosti **==** se koriste kada poredimo dve vrednosti, i to je često sasvim dovoljno, ali morate biti svesni da ima ograničenja i neočekivana ponašanja. Jedan tipičan primer:
+
 ```php
 <?php
 if (0 == '') {
@@ -264,9 +267,11 @@ if (0 == '') {
 }
 ?>
 ```
+
 Kao što sam spomenuo za istinitost, nula je ekvivalentno **false**, kao i prazan string, dakle, u ovom slučaju, su jednaki. Ako ne budete svesni toga uješće vas za dupe! Najbolji način da izbegnete ovu, i druge slične situacije, jeste da koristite strogo poređenje **===**. 
 
 **===** poredi i **tip** i **vrednost**, za razliku od == koje samo poredi vrednost. String sa nulom '0' i integer nula 0 nisu jednaki kad se porede sa njim. Generalno je bolje da koristite taj vid poređenja. Isto tako imate strogo poređenje nejednakosti **!==**, kao i obično poređenje nejednakosti **!=** koji imaju svoju svrhu.
+
 ```php
 <?php
 if (0 !== '') {
