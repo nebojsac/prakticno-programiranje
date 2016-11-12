@@ -47,7 +47,8 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * [Variable Scope](poglavlja/funkcije.md#variable-scope)
  * [Default Values](poglavlja/funkcije.md#default-values)
  * [Return](poglavlja/funkcije.md#return)
- * [Include](poglavlja/funkcije.md#nclude)
+ * [Include](poglavlja/funkcije.md#include)
+* [Rad preko FTP-a](poglavlja/ftp.md)
 
 ## Teme u najavi
 
@@ -56,7 +57,7 @@ Početnički tutorijal za programiranje u PHP-u. Autor: Nebojša Horvat Cinger
  * XAMPP radi ali "Apache" pokazuje grešku sa PORTom
  * Ne znam pokrenuti primer u browseru
  * U browseru vidim isto što u editoru
- * [Rekurzija (napredno)](#rekurzija-napredno)
+* [Sesije](#sesije)
 * [Klase](#klase)
  * [Atributi, Metode, Vidljivost](#atributi-metode-vidljivost)
 
